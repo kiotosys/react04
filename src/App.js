@@ -1,8 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
 import AppLista from './protegido/AppLista';
 
-// //style={{background:"violet", width:"350px", padding:"10px"}}
+//style={{background:"violet", width:"350px", padding:"10px"}}
 function App() {
   return (
     <div style={{background:"violet", width:"350px", padding:"10px"}}>
