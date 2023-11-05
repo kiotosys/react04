@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import AppForm from './AppForm';
 import { collection, deleteDoc, doc, onSnapshot, query } from 'firebase/firestore';
-import { db } from '../conexion/firebase';
+import { db } from '../../conexion/firebase';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
  
 const AppLista = (props) => {
 
@@ -27,14 +29,20 @@ const AppLista = (props) => {
     if(window.confirm("Confirme para eliminar")){ // Ventana para confirmar
       await deleteDoc(doc(db, "persona", xId));   // Elimina en BD
     }
-    alert("Se ELIMINO con éxito...");
+    //alert("Se ELIMINO con éxito...");
+    toast("Se ELIMINO con éxito...", {
+      type:"error",
+      autoClose:2000
+    })
   }
   
   return (
     <div style={{background:"greenyellow", padding:"10px"}}>
       <h1>AppList.js</h1>
+      <ToastContainer />
+
       <AppForm {...{idActual, setIdActual}} />  {/* Envios de variables */}
-      <h3>Lista de clientes</h3>
+      <h3>Lista de clientes </h3>
       {
         docBD.map((row, index) =>               // Extraer registro e index
           <p key={row.id}>                      {/* Asignar key a <p> */}
