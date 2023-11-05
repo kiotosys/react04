@@ -1,7 +1,4 @@
-import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import AppLista from './protegido/sistemacrud/AppLista';
-import Dashboard from './public/Dashboard';
-import Home from './public/Home';
+import { BrowserRouter as Router } from 'react-router-dom';
 import BarraRutasPublic from './ruteo/BarraRutasPublic';
 import BarraRutasProtected from './ruteo/BarraRutasProtected';
 import { useAuth } from "./ruteo/AuthContext";

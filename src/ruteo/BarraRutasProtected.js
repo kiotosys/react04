@@ -43,8 +43,7 @@ const BarraRutasProtected = () => {
         <nav>
           <div id="login">
             <ul>
-              <li><Link to="/nuevoregistro">Registrar</Link></li>
-  
+                
               {user ? (         ////////  Para cerrar sesión   ///////////
                 <li><Link onClick={handleSignOut} > Cerrar sesión </Link> </li> 
                 ) : (
